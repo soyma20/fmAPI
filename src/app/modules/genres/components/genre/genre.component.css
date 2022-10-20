@@ -1,0 +1,10 @@
+.genreBox{
+  width: 300px;
+  height: 150px;
+  background: #f5f56d;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}

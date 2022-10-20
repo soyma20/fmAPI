@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LikesComponent } from './components/likes/likes.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     MainLayoutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

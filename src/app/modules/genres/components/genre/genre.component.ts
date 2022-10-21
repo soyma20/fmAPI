@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ITag} from "../../../../interfaces/ITag";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-genre',
@@ -11,10 +12,13 @@ export class GenreComponent implements OnInit {
   @Input()
   genre: ITag;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
+  navigateToAlbums(name: string) {
+    this.router.navigate(['albums', name.replace(' ', '+')], )
+  }
 }

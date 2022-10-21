@@ -1,3 +1,4 @@
-<a routerLink="/albums" [state]="{data:genre.name}">
-  <div class="genreBox">{{genre.name}}</div>
-</a>
+<div class="genreBox" (click)="navigateToAlbums(genre.name)">
+  <p><b>{{genre.name}}</b></p>
+</div>
+

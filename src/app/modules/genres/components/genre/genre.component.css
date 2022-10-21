@@ -1,10 +1,15 @@
-.genreBox{
+.genreBox {
   width: 300px;
   height: 150px;
-  background: #f5f56d;
-  border-radius: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
+  background: #ffffff;
+  border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: #000000;
+  text-transform: uppercase;
 }

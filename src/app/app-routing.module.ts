@@ -7,8 +7,7 @@ const routes:Routes=[
   {path:'', component:MainLayoutComponent, children:[
       {path:'', redirectTo:'genres', pathMatch:'full'},
       {path: 'genres', loadChildren:()=> import('./modules').then(value => value.GenresModule) },
-      {path: 'albums', loadChildren:()=> import('./modules').then(value => value.AlbumsModule) },
-      {path: 'likes', loadChildren:()=> import('./modules').then(value => value.LikesModule) },
+      {path: 'albums/:genre', loadChildren:()=> import('./modules').then(value => value.AlbumsModule) },
     ]}
 ]
 

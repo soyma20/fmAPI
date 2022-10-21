@@ -7,6 +7,7 @@ import { LikesComponent } from './components/likes/likes.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,10 +17,11 @@ import {AppRoutingModule} from "./app-routing.module";
     SearchInputComponent,
     MainLayoutComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

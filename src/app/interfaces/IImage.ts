@@ -1,4 +1,4 @@
 export interface IImage {
-  text: string,
+  "#text": string,
   size: string,
 }

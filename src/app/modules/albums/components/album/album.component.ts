@@ -1,29 +1,30 @@
-import {Component, DoCheck, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
 import {IAlbum} from "../../../../interfaces/IAlbum";
-import {IImage} from "../../../../interfaces/IImage";
 
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css']
 })
-export class AlbumComponent implements DoCheck {
+export class AlbumComponent {
 
   @Input()
   album: IAlbum;
-  small: IImage;
-  medium: IImage;
-  large: IImage;
-  extralarge: IImage;
 
-  constructor() {
+  addToFavorite() {
+    const item = localStorage.getItem('favorite');
+    if (item) {
+      console.log(item)
+      const parse: IAlbum[] = JSON.parse(item);
+      for (const iAlbum of parse) {
+        if (iAlbum.name === this.album.name) return;
+      }
+      parse.push(this.album)
+      localStorage.setItem('favorite', JSON.stringify(parse))
+    } else {
+      const favorite = [this.album]
+      localStorage.setItem('favorite', JSON.stringify(favorite))
+    }
   }
-
-  ngDoCheck(): void {
-    this.small = this.album.image[0];
-    this.medium = this.album.image[1];
-    this.large = this.album.image[2];
-    this.extralarge = this.album.image[3];
-  }
-
 }

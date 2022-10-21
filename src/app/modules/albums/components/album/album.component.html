@@ -1,6 +1,9 @@
-<div>
-  <p>{{album.name}}</p>
-  <img src="{{large.text}}" alt="poster">
+<div class="wrap" (click)="addToFavorite()">
+  <div *ngFor="let image of album.image" class="blackout">
+    <img *ngIf="image.size ==='large'" src="{{image['#text']}}" alt="poster">
+  </div>
+  <div class="content">
+    <h3 class="title">{{album.name}}</h3>
+    <h4 class="title">{{album.artist.name}}</h4>
+  </div>
 </div>
-
-

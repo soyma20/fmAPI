@@ -1,0 +1,22 @@
+.wrap{
+  width: 174px;
+}
+.title{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  left: 0;
+  color: white;
+  opacity: 0;
+  bottom: 35px;
+  text-align: center;
+  transition: opacity .5s;
+  border-radius: 0 0 5px 5px;
+}
+.wrap:hover .title {
+  background: black;
+  opacity: 1;
+}
+img{
+  border-radius: 5px;
+}

@@ -1,3 +1,8 @@
-p{
-  color: white;
+input{
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 2px solid cornflowerblue;
+  margin: 25px;
 }

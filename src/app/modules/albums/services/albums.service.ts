@@ -1,21 +1,22 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
 import {IAlbums} from "../../../interfaces/IAlbums";
 import {token} from "../../../constants/token";
 import {urls} from "../../../constants/urls";
+import {ActivatedRoute, Params} from "@angular/router";
+import {IResponse} from "../../../interfaces/IResponse";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlbumsService {
 
-  constructor(private HttpClient: HttpClient) {
+  constructor(private HttpClient: HttpClient, private activatedRoute: ActivatedRoute) {
   }
 
-  getAll(): Observable<IAlbums>{
-    const {data} = history.state;
-    return this.HttpClient.get<IAlbums>(urls.albums + data+'&api_key='+ token + '&format=json')
+  getAll(genre:string): Observable<IResponse> {
+
+    return this.HttpClient.get<IResponse>(urls.albums + genre + '&api_key=' + token + '&format=json')
   }
 }

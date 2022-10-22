@@ -54,3 +54,13 @@ img {
   top: 0;
   right: -50%;
 }
+.notification{
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  background: white;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid cornflowerblue;
+}

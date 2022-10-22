@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IAlbum} from "../../../../interfaces/IAlbum";
 import {AlbumsService} from "../../services/albums.service";
-import {DataService} from "../../../../services/data.service";
 
 @Component({
   selector: 'app-albums',
@@ -13,14 +12,10 @@ import {DataService} from "../../../../services/data.service";
 export class AlbumsComponent implements OnInit {
   genre: string;
   albums: IAlbum[];
-  search: string;
+  search: string = '';
 
 
-  constructor(private albumsService: AlbumsService, private activatedRoute: ActivatedRoute, private dataService: DataService) {
-  }
-
-  find():void {
-    this.search = this.dataService.storage
+  constructor(private albumsService: AlbumsService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -28,4 +23,7 @@ export class AlbumsComponent implements OnInit {
     this.albumsService.getAll(this.genre).subscribe(value => this.albums = value.albums.album)
   }
 
+  catch(search: string) {
+    this.search = search
+  }
 }

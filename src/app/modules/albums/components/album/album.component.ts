@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IAlbum} from "../../../../interfaces/IAlbum";
 
@@ -8,9 +8,9 @@ import {IAlbum} from "../../../../interfaces/IAlbum";
   styleUrls: ['./album.component.css']
 })
 export class AlbumComponent implements OnInit {
-
   @Input()
   album: IAlbum;
+
   liked: boolean;
   notification: boolean = false;
 
@@ -46,26 +46,26 @@ export class AlbumComponent implements OnInit {
         localStorage.setItem('favorite', JSON.stringify(parse))
         this.liked = false
         this.notification = true;
-        setTimeout(()=>{
-          this.notification=false
-        },1000)
+        setTimeout(() => {
+          this.notification = false
+        }, 1000)
       } else {
         parse.push(this.album)
         localStorage.setItem('favorite', JSON.stringify(parse))
         this.liked = true
         this.notification = true;
-        setTimeout(()=>{
-          this.notification=false
-        },1000)
+        setTimeout(() => {
+          this.notification = false
+        }, 1000)
       }
     } else {
       const favorite = [this.album]
       localStorage.setItem('favorite', JSON.stringify(favorite))
       this.liked = true
       this.notification = true;
-      setTimeout(()=>{
-        this.notification=false
-      },1000)
+      setTimeout(() => {
+        this.notification = false
+      }, 1000)
     }
   }
 }

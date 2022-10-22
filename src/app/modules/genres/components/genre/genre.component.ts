@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ITag} from "../../../../interfaces/ITag";
 import {Router} from "@angular/router";
 
@@ -7,15 +7,12 @@ import {Router} from "@angular/router";
   templateUrl: './genre.component.html',
   styleUrls: ['./genre.component.css']
 })
-export class GenreComponent implements OnInit {
+export class GenreComponent {
 
   @Input()
   genre: ITag;
 
   constructor(private router: Router) {
-  }
-
-  ngOnInit(): void {
   }
 
   navigateToAlbums(name: string) {

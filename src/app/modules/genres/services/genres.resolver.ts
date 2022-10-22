@@ -1,11 +1,7 @@
 import {Injectable} from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {GenresModule} from "../genres.module";
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {Observable} from 'rxjs';
+
 import {IToptags} from "../../../interfaces/IToptags";
 import {GenreService} from "./genre.service";
 

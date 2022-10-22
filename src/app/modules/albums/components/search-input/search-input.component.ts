@@ -8,11 +8,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class SearchInputComponent implements OnInit {
   form: FormGroup;
+
   @Output()
   inputEmitter = new EventEmitter<string>();
-
-  constructor() {
-  }
 
   ngOnInit(): void {
     this._createForm()

@@ -1,7 +1,8 @@
-.likeCounter{
+.likeCounter {
   display: flex;
   margin: 25px;
 }
+
 .heart {
   background: white;
   width: 25px;
@@ -31,7 +32,8 @@
   top: 0;
   right: -50%;
 }
-p{
+
+p {
   background: cornflowerblue;
   color: white;
   width: 20px;

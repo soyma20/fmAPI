@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
 import {IAlbum} from "../../../../interfaces/IAlbum";
 import {AlbumsService} from "../../services/albums.service";
 

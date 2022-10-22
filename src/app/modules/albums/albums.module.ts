@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from "@angular/forms";
 
 import {AlbumsComponent} from './components/albums/albums.component';
 import {AlbumComponent} from './components/album/album.component';
@@ -9,7 +10,6 @@ import {AlbumsService} from "./services/albums.service";
 import {HeaderComponent} from "./components/header/header.component";
 import {LikesComponent} from "./components/likes/likes.component";
 import {SearchInputComponent} from "./components/search-input/search-input.component";
-import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [

@@ -1,7 +1,6 @@
 .genreBox {
   width: 300px;
   height: 150px;
-  background: #ffffff;
   border-radius: 5px;
   cursor: pointer;
   display: flex;

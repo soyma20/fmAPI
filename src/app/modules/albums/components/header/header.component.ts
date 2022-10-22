@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -6,15 +6,12 @@ import {Router} from "@angular/router";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   @Output()
   inputEmitter = new EventEmitter<string>();
 
   constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   goBack():void {
     this.router.navigate(['./'])

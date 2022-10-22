@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+
 import {IAlbum} from "../../../../interfaces/IAlbum";
 
 @Component({
@@ -6,15 +7,7 @@ import {IAlbum} from "../../../../interfaces/IAlbum";
   templateUrl: './likes.component.html',
   styleUrls: ['./likes.component.css']
 })
-export class LikesComponent implements OnInit {
-
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-
-  }
+export class LikesComponent {
 
   getLikes(): number {
     const item = localStorage.getItem('favorite');

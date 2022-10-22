@@ -3,6 +3,7 @@
     <img *ngIf="image.size ==='large'" src="{{image['#text']}}" alt="poster">
   </div>
   <div class="content">
+    <div *ngIf="liked" class="heart"></div>
     <h3 class="title">{{album.name}}</h3>
     <h4 class="title">{{album.artist.name}}</h4>
   </div>

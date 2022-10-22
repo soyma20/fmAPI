@@ -1,22 +1,60 @@
-.wrap{
+.wrap {
   width: 174px;
 }
-.title{
+
+.title {
   position: relative;
   width: 100%;
   overflow: hidden;
   left: 0;
   color: white;
   opacity: 0;
-  bottom: 35px;
+  bottom: 65px;
   text-align: center;
   transition: opacity .5s;
   border-radius: 0 0 5px 5px;
 }
+
 .wrap:hover .title {
   background: black;
   opacity: 1;
 }
-img{
+
+img {
   border-radius: 5px;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heart {
+  background: white;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  transform: rotate(-45deg);
+  top: 5px;
+}
+
+.heart::after {
+  position: absolute;
+  content: '';
+  background: inherit;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  top: -50%;
+  left: 0;
+}
+
+.heart::before {
+  position: absolute;
+  content: '';
+  background: inherit;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  right: -50%;
 }

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IAlbum} from "../../../../interfaces/IAlbum";
 
@@ -7,24 +7,51 @@ import {IAlbum} from "../../../../interfaces/IAlbum";
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css']
 })
-export class AlbumComponent {
+export class AlbumComponent implements OnInit {
 
   @Input()
   album: IAlbum;
+  liked: boolean;
 
-  addToFavorite() {
+  ngOnInit(): void {
+    this.checkLikes()
+  }
+
+  checkLikes(): void {
+    const item = localStorage.getItem('favorite');
+    if (!item) return
+    const parse: IAlbum[] = JSON.parse(item);
+    for (const iAlbum of parse) {
+      if (iAlbum.name === this.album.name) {
+        this.liked = true;
+      }
+    }
+  }
+
+  addToFavorite(): void {
     const item = localStorage.getItem('favorite');
     if (item) {
-      console.log(item)
       const parse: IAlbum[] = JSON.parse(item);
-      for (const iAlbum of parse) {
-        if (iAlbum.name === this.album.name) return;
+      let isPresent: boolean = false;
+      for (let i = 0; i < parse.length; i++) {
+        const parseElement = parse[i];
+        if (parseElement.name === this.album.name) {
+          isPresent = true
+          parse.splice(i, 1)
+        }
       }
-      parse.push(this.album)
-      localStorage.setItem('favorite', JSON.stringify(parse))
+      if (isPresent) {
+        localStorage.setItem('favorite', JSON.stringify(parse))
+        this.liked = false
+      }else {
+        parse.push(this.album)
+        localStorage.setItem('favorite', JSON.stringify(parse))
+        this.liked = true
+      }
     } else {
       const favorite = [this.album]
       localStorage.setItem('favorite', JSON.stringify(favorite))
+      this.liked = true
     }
   }
 }

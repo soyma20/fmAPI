@@ -6,16 +6,24 @@ import {AlbumComponent} from './components/album/album.component';
 import {AlbumsRoutingModule} from "./albums-routing.module";
 import {HttpModule} from "../http/http.module";
 import {AlbumsService} from "./services/albums.service";
+import {HeaderComponent} from "./components/header/header.component";
+import {LikesComponent} from "./components/likes/likes.component";
+import {SearchInputComponent} from "./components/search-input/search-input.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AlbumsComponent,
     AlbumComponent,
+    HeaderComponent,
+    LikesComponent,
+    SearchInputComponent,
   ],
   imports: [
     CommonModule,
     AlbumsRoutingModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [
     AlbumsService,

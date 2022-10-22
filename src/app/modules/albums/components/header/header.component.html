@@ -1,5 +1,5 @@
 <div id="container">
   <button (click)="goBack()"><b>Back</b></button>
-  <app-search-input></app-search-input>
+  <app-search-input (inputEmitter)="catchInputEmitt($event)"></app-search-input>
   <app-likes></app-likes>
 </div>

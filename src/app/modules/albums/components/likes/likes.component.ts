@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IAlbum} from "../../interfaces/IAlbum";
+import {IAlbum} from "../../../../interfaces/IAlbum";
 
 @Component({
   selector: 'app-likes',
@@ -7,7 +7,7 @@ import {IAlbum} from "../../interfaces/IAlbum";
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-  likes: number = 0;
+
 
   constructor() {
   }
@@ -15,11 +15,15 @@ export class LikesComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  getLikes():void{
+
+  getLikes(): number {
     const item = localStorage.getItem('favorite');
-    if (!item) return;
-    const parse: IAlbum[] = JSON.parse(item);
-    this.likes = parse.length
+    if (!item) {
+      return 0
+    } else {
+      const parse: IAlbum[] = JSON.parse(item);
+      return parse.length
+    }
   }
 
 }

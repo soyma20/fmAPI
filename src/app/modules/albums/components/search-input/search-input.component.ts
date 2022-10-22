@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {IAlbum} from "../../interfaces/IAlbum";
-import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-search-input',
@@ -10,8 +8,10 @@ import {DataService} from "../../services/data.service";
 })
 export class SearchInputComponent implements OnInit {
   form: FormGroup;
+  @Output()
+  inputEmitter = new EventEmitter<string>();
 
-  constructor(private dataService: DataService) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class SearchInputComponent implements OnInit {
     })
   }
 
-  search() {
-    this.dataService.storage = this.form.getRawValue().input
+  emitt(): void {
+    this.inputEmitter.emit(this.form.getRawValue().input)
   }
 }

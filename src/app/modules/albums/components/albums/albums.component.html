@@ -1,0 +1,8 @@
+<app-header (inputEmitter)="catch($event)"></app-header>
+<div class="center">
+  <div class="wrapper">
+    <div *ngFor="let album of albums">
+      <app-album *ngIf="album.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())" [album]="album"></app-album>
+    </div>
+  </div>
+</div>

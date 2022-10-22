@@ -1,0 +1,13 @@
+<div class="wrap" (click)="addToFavorite()">
+  <div *ngFor="let image of album.image" class="blackout">
+    <img *ngIf="image.size ==='large'" src="{{image['#text']}}" alt="poster">
+  </div>
+  <div class="content">
+    <h3 class="title">{{album.name}}</h3>
+    <h4 class="title">{{album.artist.name}}</h4>
+    <div *ngIf="liked" class="heart"></div>
+  </div>
+</div>
+<div class="notification" *ngIf="notification">
+  {{album.name}}
+</div>

@@ -1,0 +1,45 @@
+.likeCounter {
+  display: flex;
+  margin: 25px;
+}
+
+.heart {
+  background: white;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.heart::after {
+  position: absolute;
+  content: '';
+  background: inherit;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  top: -50%;
+  left: 0;
+}
+
+.heart::before {
+  position: absolute;
+  content: '';
+  background: inherit;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  right: -50%;
+}
+
+p {
+  background: cornflowerblue;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 2px;
+}

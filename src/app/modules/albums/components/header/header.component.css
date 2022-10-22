@@ -1,0 +1,14 @@
+#container{
+  height:100px;
+  background: #161416;
+  display: flex;
+  justify-content: space-between;
+}
+button{
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 2px solid cornflowerblue;
+  margin: 25px;
+}

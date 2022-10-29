@@ -7,6 +7,7 @@ import {GenreService} from "./services/genre.service";
 import {GenresResolver} from "./services/genres.resolver";
 import {HttpModule} from "../http/http.module";
 import {GenreComponent} from './components/genre/genre.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 
 @NgModule({
@@ -14,11 +15,12 @@ import {GenreComponent} from './components/genre/genre.component';
     GenresComponent,
     GenreComponent,
   ],
-  imports: [
-    CommonModule,
-    HttpModule,
-    GenresRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        HttpModule,
+        GenresRoutingModule,
+        MatToolbarModule,
+    ],
   providers: [
     GenreService,
     GenresResolver,

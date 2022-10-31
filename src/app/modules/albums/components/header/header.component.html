@@ -1,5 +1,7 @@
-<div id="container">
-  <button (click)="goBack()"><b>Back</b></button>
-  <app-search-input (inputEmitter)="catchInputEmitt($event)"></app-search-input>
+<mat-toolbar color="primary" id="toolbar">
+  <div>
+    <button mat-raised-button (click)="goBack()">Back</button>
+    <app-search-input (inputEmitter)="catchInputEmitt($event)"></app-search-input>
+  </div>
   <app-likes></app-likes>
-</div>
+</mat-toolbar>

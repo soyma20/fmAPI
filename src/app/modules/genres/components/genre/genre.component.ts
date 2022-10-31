@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {ITag} from "../../../../interfaces/ITag";
 import {Router} from "@angular/router";
+
+import {ITag} from "../../../../interfaces/ITag";
 
 @Component({
   selector: 'app-genre',

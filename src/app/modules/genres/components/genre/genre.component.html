@@ -1,4 +1,6 @@
-<div class="genreBox" (click)="navigateToAlbums(genre.name)">
-  <p><b>{{genre.name}}</b></p>
-</div>
-
+<mat-card (click)="navigateToAlbums(genre.name)">
+  <mat-card-title>{{genre.name}}</mat-card-title>
+  <mat-card-content>
+    <img src="https://lastfm.freetls.fastly.net/i/u/174s/185a38ca7368d2c9ad9cb9ea95ae05f4.png" alt="album img">
+  </mat-card-content>
+</mat-card>

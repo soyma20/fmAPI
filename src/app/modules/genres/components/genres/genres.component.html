@@ -1,9 +1,5 @@
-<div id="wrapper">
-  <div id="genres">
-    <app-genre *ngFor="let genre of genres" [genre]="genre"></app-genre>
-  </div>
-</div>
-<br>
-<mat-toolbar color="primary">
-  <span>My test</span>
-</mat-toolbar>
+<mat-grid-list cols="3" id="background" rowHeight="2:1">
+  <mat-grid-tile  *ngFor="let genre of genres" >
+    <app-genre [genre]="genre"></app-genre>
+  </mat-grid-tile>
+</mat-grid-list>

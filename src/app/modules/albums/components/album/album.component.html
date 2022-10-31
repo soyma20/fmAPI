@@ -1,13 +1,11 @@
-<div class="wrap" (click)="addToFavorite()">
-  <div *ngFor="let image of album.image" class="blackout">
+<mat-card (click)="addToFavorite(album.name)">
+  <mat-card-header>
+    <mat-card-title>{{album.name}}</mat-card-title>
+    <mat-card-subtitle>{{album.artist.name}}</mat-card-subtitle>
+    <mat-icon *ngIf="!liked">favorite</mat-icon>
+    <mat-icon *ngIf="liked" color="accent">favorite</mat-icon>
+  </mat-card-header>
+  <mat-card-content *ngFor="let image of album.image">
     <img *ngIf="image.size ==='large'" src="{{image['#text']}}" alt="poster">
-  </div>
-  <div class="content">
-    <h3 class="title">{{album.name}}</h3>
-    <h4 class="title">{{album.artist.name}}</h4>
-    <div *ngIf="liked" class="heart"></div>
-  </div>
-</div>
-<div class="notification" *ngIf="notification">
-  {{album.name}}
-</div>
+  </mat-card-content>
+</mat-card>

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 import {IAlbum} from "../../../../interfaces/IAlbum";
 
@@ -10,10 +11,10 @@ import {IAlbum} from "../../../../interfaces/IAlbum";
 export class AlbumComponent implements OnInit {
   @Input()
   album: IAlbum;
-
   liked: boolean;
-  notification: boolean = false;
 
+  constructor(private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.checkLikes()
@@ -30,7 +31,7 @@ export class AlbumComponent implements OnInit {
     }
   }
 
-  addToFavorite(): void {
+  addToFavorite(name: string): void {
     const item = localStorage.getItem('favorite');
     if (item) {
       const parse: IAlbum[] = JSON.parse(item);
@@ -45,27 +46,17 @@ export class AlbumComponent implements OnInit {
       if (isPresent) {
         localStorage.setItem('favorite', JSON.stringify(parse))
         this.liked = false
-        this.notification = true;
-        setTimeout(() => {
-          this.notification = false
-        }, 1000)
       } else {
         parse.push(this.album)
         localStorage.setItem('favorite', JSON.stringify(parse))
         this.liked = true
-        this.notification = true;
-        setTimeout(() => {
-          this.notification = false
-        }, 1000)
+        this.snackBar.open(name)
       }
     } else {
       const favorite = [this.album]
       localStorage.setItem('favorite', JSON.stringify(favorite))
       this.liked = true
-      this.notification = true;
-      setTimeout(() => {
-        this.notification = false
-      }, 1000)
+      this.snackBar.open(name)
     }
   }
 }

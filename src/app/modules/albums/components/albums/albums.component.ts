@@ -15,7 +15,6 @@ export class AlbumsComponent implements OnInit {
   albums: IAlbum[];
   search: string = '';
 
-
   constructor(private albumsService: AlbumsService, private activatedRoute: ActivatedRoute) {
   }
 

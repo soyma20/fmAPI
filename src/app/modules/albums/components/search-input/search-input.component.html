@@ -1,3 +1,4 @@
-<form [formGroup]="form">
-  <input formControlName="input" type="text" (input)="emitt()">
-</form>
+<mat-form-field id="input" [formGroup]="form">
+  <mat-label>Search album by name</mat-label>
+  <input type="text" matInput formControlName="input" (input)="emitt()">
+</mat-form-field>

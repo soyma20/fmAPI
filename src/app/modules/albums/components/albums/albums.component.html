@@ -1,6 +1,9 @@
 <app-header (inputEmitter)="catch($event)"></app-header>
-<mat-grid-list cols="5">
-    <mat-grid-tile *ngFor="let album of albums">
+
+<div class="center">
+  <div class="wrapper">
+    <ng-container *ngFor="let album of albums">
       <app-album *ngIf="album.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())" [album]="album"></app-album>
-    </mat-grid-tile>
-</mat-grid-list>
+    </ng-container>
+  </div>
+</div>

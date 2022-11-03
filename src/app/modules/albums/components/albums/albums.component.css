@@ -1,0 +1,11 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  gap: 30px;
+}

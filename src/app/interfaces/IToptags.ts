@@ -1,7 +1,5 @@
-import {ITag} from "./ITag";
-import {IAttrTag} from "./IAttrTag";
+import {ITags} from "./ITags";
 
 export interface IToptags {
-  tags:ITag[],
-  attr:IAttrTag
+  tags: ITags
 }

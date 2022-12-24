@@ -5,4 +5,5 @@ export interface ITag {
   taggings: number,
   streamable: number,
   wiki: object,
+  img?:string,
 }

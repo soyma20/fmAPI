@@ -5,10 +5,22 @@ mat-card {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
-mat-card:hover{
+mat-card:hover {
   cursor: pointer;
 }
-mat-card-title{
+mat-card-title {
   text-transform: uppercase;
+}
+mat-card-content {
+  position: relative;
+}
+.img {
+  width: 174px;
+  height: 174px;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 42px;
+  top: -10px;
 }

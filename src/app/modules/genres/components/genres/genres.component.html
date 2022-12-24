@@ -1,6 +1,7 @@
-<h1>Choose genre of album</h1>
-<mat-grid-list cols="3" id="background" rowHeight="2:1">
-  <mat-grid-tile  *ngFor="let genre of genres" >
-    <app-genre [genre]="genre"></app-genre>
-  </mat-grid-tile>
-</mat-grid-list>
+<div id="background">
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let genre of genres">
+      <app-genre [genre]="genre"></app-genre>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

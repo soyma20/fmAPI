@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 import {ITag} from "../../../../interfaces/ITag";
+import {Images} from "../../../../constants/images";
 
 @Component({
   selector: 'app-genres',
@@ -15,8 +16,12 @@ export class GenresComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(({genresData}) => {
-      this.genres=genresData.tags.tag;
+    this.activatedRoute.data.subscribe(({genresData: {tags: {tag}}}) => {
+      const tags = tag as ITag[];
+      tags.map((value, index) => {
+        value.img = Images[index];
+      })
+      this.genres = tags
     })
   }
 
